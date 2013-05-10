@@ -46,6 +46,8 @@
 		5B8F7383173D2CE70047C1ED /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F7382173D2CE70047C1ED /* FacebookSDK.framework */; };
 		5B8F7386173D2D0B0047C1ED /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F7385173D2D0B0047C1ED /* FacebookSDKResources.bundle */; };
 		5B8F73AC173D2D3F0047C1ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F73AB173D2D3F0047C1ED /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5B8F73AF173D6BDE0047C1ED /* SMSComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */; };
+		5B8F73B1173D6C350047C1ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F73B0173D6C350047C1ED /* MessageUI.framework */; };
 		5B922859173CF86800AEC381 /* app_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B922858173CF86800AEC381 /* app_icon_57x57.png */; };
 		5B92285B173CF87A00AEC381 /* app_icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92285A173CF87A00AEC381 /* app_icon_114x114.png */; };
 		5B92285D173CF88F00AEC381 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92285C173CF88F00AEC381 /* Default.png */; };
@@ -156,6 +158,9 @@
 		5B8F73A9173D2D170047C1ED /* FBWebDialogs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBWebDialogs.h; sourceTree = "<group>"; };
 		5B8F73AA173D2D170047C1ED /* NSError+FBError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+FBError.h"; sourceTree = "<group>"; };
 		5B8F73AB173D2D3F0047C1ED /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5B8F73AD173D6BDE0047C1ED /* SMSComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSComposer.h; sourceTree = "<group>"; };
+		5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSComposer.m; sourceTree = "<group>"; };
+		5B8F73B0173D6C350047C1ED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5B922858173CF86800AEC381 /* app_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_57x57.png; sourceTree = "<group>"; };
 		5B92285A173CF87A00AEC381 /* app_icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_114x114.png; sourceTree = "<group>"; };
 		5B92285C173CF88F00AEC381 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -174,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B8F73B1173D6C350047C1ED /* MessageUI.framework in Frameworks */,
 				5B8F73AC173D2D3F0047C1ED /* Security.framework in Frameworks */,
 				5B92286B173D178200AEC381 /* Accounts.framework in Frameworks */,
 				5B92286C173D178200AEC381 /* AdSupport.framework in Frameworks */,
@@ -241,7 +247,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				5B8F73AB173D2D3F0047C1ED /* Security.framework */,
 				5B922860173CF8D100AEC381 /* Default-568h@2x.png */,
 				5B92285E173CF8AD00AEC381 /* Default@2x.png */,
 				5B92285C173CF88F00AEC381 /* Default.png */,
@@ -289,6 +294,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F73B0173D6C350047C1ED /* MessageUI.framework */,
+				5B8F73AB173D2D3F0047C1ED /* Security.framework */,
 				5B8F7387173D2D170047C1ED /* DeprecatedHeaders */,
 				5B8F7385173D2D0B0047C1ED /* FacebookSDKResources.bundle */,
 				5B8F7382173D2CE70047C1ED /* FacebookSDK.framework */,
@@ -325,6 +332,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F73AD173D6BDE0047C1ED /* SMSComposer.h */,
+				5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */,
 				5B8F737F173D2CC90047C1ED /* FacebookConnectPlugin.h */,
 				5B8F7380173D2CC90047C1ED /* FacebookConnectPlugin.m */,
 			);
@@ -545,6 +554,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				5B8F7381173D2CC90047C1ED /* FacebookConnectPlugin.m in Sources */,
+				5B8F73AF173D6BDE0047C1ED /* SMSComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
