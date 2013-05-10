@@ -48,6 +48,7 @@
 		5B8F73AC173D2D3F0047C1ED /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F73AB173D2D3F0047C1ED /* Security.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B8F73AF173D6BDE0047C1ED /* SMSComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */; };
 		5B8F73B1173D6C350047C1ED /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F73B0173D6C350047C1ED /* MessageUI.framework */; };
+		5B8F73B4173D6FC30047C1ED /* EmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F73B3173D6FC30047C1ED /* EmailComposer.m */; };
 		5B922859173CF86800AEC381 /* app_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B922858173CF86800AEC381 /* app_icon_57x57.png */; };
 		5B92285B173CF87A00AEC381 /* app_icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92285A173CF87A00AEC381 /* app_icon_114x114.png */; };
 		5B92285D173CF88F00AEC381 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B92285C173CF88F00AEC381 /* Default.png */; };
@@ -161,6 +162,8 @@
 		5B8F73AD173D6BDE0047C1ED /* SMSComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSComposer.h; sourceTree = "<group>"; };
 		5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSComposer.m; sourceTree = "<group>"; };
 		5B8F73B0173D6C350047C1ED /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5B8F73B2173D6FC30047C1ED /* EmailComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailComposer.h; sourceTree = "<group>"; };
+		5B8F73B3173D6FC30047C1ED /* EmailComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailComposer.m; sourceTree = "<group>"; };
 		5B922858173CF86800AEC381 /* app_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_57x57.png; sourceTree = "<group>"; };
 		5B92285A173CF87A00AEC381 /* app_icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon_114x114.png; sourceTree = "<group>"; };
 		5B92285C173CF88F00AEC381 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -332,6 +335,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				5B8F73B2173D6FC30047C1ED /* EmailComposer.h */,
+				5B8F73B3173D6FC30047C1ED /* EmailComposer.m */,
 				5B8F73AD173D6BDE0047C1ED /* SMSComposer.h */,
 				5B8F73AE173D6BDE0047C1ED /* SMSComposer.m */,
 				5B8F737F173D2CC90047C1ED /* FacebookConnectPlugin.h */,
@@ -555,6 +560,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				5B8F7381173D2CC90047C1ED /* FacebookConnectPlugin.m in Sources */,
 				5B8F73AF173D6BDE0047C1ED /* SMSComposer.m in Sources */,
+				5B8F73B4173D6FC30047C1ED /* EmailComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

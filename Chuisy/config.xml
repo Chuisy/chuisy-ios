@@ -59,6 +59,7 @@
         <plugin name="InAppBrowser" value="CDVInAppBrowser" />
         <plugin name="org.apache.cordova.facebook.Connect" value="FacebookConnectPlugin" />
         <plugin name="SMSComposer" value="SMSComposer" />
+        <plugin name="EmailComposer" value="EmailComposer" />
     </plugins>
 
     <access origin="*" />
