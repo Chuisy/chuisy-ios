@@ -60,6 +60,7 @@
         <plugin name="org.apache.cordova.facebook.Connect" value="FacebookConnectPlugin" />
         <plugin name="SMSComposer" value="SMSComposer" />
         <plugin name="com.webXells.imageResizer" value="ImageResize" />
+        <plugin name="PushNotification" value="PushNotification" />
     </plugins>
 
     <access origin="*" />
