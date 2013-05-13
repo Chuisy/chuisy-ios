@@ -165,96 +165,101 @@
 }
 
 - (void) login:(CDVInvokedUrlCommand*)command
-{    
-    NSArray *permissions = nil;
-    if ([command.arguments count] > 0) {
-        permissions = command.arguments;
-    }
-    
-    // save the callbackId for the login callback
-    self.loginCallbackId = command.callbackId;
-    
-    // Check if the session is open or not
-    if (FBSession.activeSession.isOpen) {
-        // Reauthorize if the session is already open.
-        // In this instance we can ask for publish type
-        // or read type only if taking advantage of iOS6.
-        // To mix both, we'll use deprecated methods
-        BOOL publishPermissionFound = NO;
-        BOOL readPermissionFound = NO;
-        for (NSString *p in permissions) {
-            if ([self isPublishPermission:p]) {
-                publishPermissionFound = YES;
+{
+    @try {
+        NSArray *permissions = nil;
+        if ([command.arguments count] > 0) {
+            permissions = command.arguments;
+        }
+        
+        // save the callbackId for the login callback
+        self.loginCallbackId = command.callbackId;
+        
+        // Check if the session is open or not
+        if (FBSession.activeSession.isOpen) {
+            // Reauthorize if the session is already open.
+            // In this instance we can ask for publish type
+            // or read type only if taking advantage of iOS6.
+            // To mix both, we'll use deprecated methods
+            BOOL publishPermissionFound = NO;
+            BOOL readPermissionFound = NO;
+            for (NSString *p in permissions) {
+                if ([self isPublishPermission:p]) {
+                    publishPermissionFound = YES;
+                } else {
+                    readPermissionFound = YES;
+                }
+                
+                // If we've found one of each we can stop looking.
+                if (publishPermissionFound && readPermissionFound) {
+                    break;
+                }
+            }
+            if (publishPermissionFound && readPermissionFound) {
+                // Mix of permissions, use deprecated method
+                [FBSession.activeSession
+                 reauthorizeWithPermissions:permissions
+                 behavior:FBSessionLoginBehaviorWithFallbackToWebView
+                 completionHandler:^(FBSession *session, NSError *error) {
+                     [self sessionStateChanged:session
+                                         state:session.state
+                                         error:error];
+                 }];
+            } else if (publishPermissionFound) {
+                // Only publish permissions
+                [FBSession.activeSession
+                 requestNewPublishPermissions:permissions
+                 defaultAudience:FBSessionDefaultAudienceFriends
+                 completionHandler:^(FBSession *session, NSError *error) {
+                    [self sessionStateChanged:session
+                                        state:session.state
+                                        error:error];
+                 }];
             } else {
-                readPermissionFound = YES;
+                // Only read permissions
+                [FBSession.activeSession
+                 requestNewReadPermissions:permissions
+                 completionHandler:^(FBSession *session, NSError *error) {
+                     [self sessionStateChanged:session
+                                         state:session.state
+                                         error:error];
+                 }];
+            }
+        } else {
+            // Initial log in, can only ask to read
+            // type permissions if one wants to use the
+            // non-deprecated open session methods and
+            // take advantage of iOS6 integration
+            if ([self areAllPermissionsReadPermissions:permissions]) {
+                [FBSession
+                 openActiveSessionWithReadPermissions:permissions
+                 allowLoginUI:YES
+                 completionHandler:^(FBSession *session,
+                                     FBSessionState state,
+                                     NSError *error) {
+                     [self sessionStateChanged:session
+                                         state:state
+                                         error:error];
+                 }];
+            } else {
+                // Use deprecated methods for backward compatibility
+                [FBSession
+                 openActiveSessionWithPermissions:permissions
+                 allowLoginUI:YES completionHandler:^(FBSession *session,
+                                                      FBSessionState state,
+                                                      NSError *error) {
+                     [self sessionStateChanged:session
+                                         state:state
+                                         error:error];
+                 }];
             }
             
-            // If we've found one of each we can stop looking.
-            if (publishPermissionFound && readPermissionFound) {
-                break;
-            }
+            
+            
         }
-        if (publishPermissionFound && readPermissionFound) {
-            // Mix of permissions, use deprecated method
-            [FBSession.activeSession
-             reauthorizeWithPermissions:permissions
-             behavior:FBSessionLoginBehaviorWithFallbackToWebView
-             completionHandler:^(FBSession *session, NSError *error) {
-                 [self sessionStateChanged:session
-                                     state:session.state
-                                     error:error];
-             }];
-        } else if (publishPermissionFound) {
-            // Only publish permissions
-            [FBSession.activeSession
-             requestNewPublishPermissions:permissions
-             defaultAudience:FBSessionDefaultAudienceFriends
-             completionHandler:^(FBSession *session, NSError *error) {
-                [self sessionStateChanged:session
-                                    state:session.state
-                                    error:error];
-             }];
-        } else {
-            // Only read permissions
-            [FBSession.activeSession
-             requestNewReadPermissions:permissions
-             completionHandler:^(FBSession *session, NSError *error) {
-                 [self sessionStateChanged:session
-                                     state:session.state
-                                     error:error];
-             }];
-        }
-    } else {
-        // Initial log in, can only ask to read
-        // type permissions if one wants to use the
-        // non-deprecated open session methods and
-        // take advantage of iOS6 integration
-        if ([self areAllPermissionsReadPermissions:permissions]) {
-            [FBSession
-             openActiveSessionWithReadPermissions:permissions
-             allowLoginUI:YES
-             completionHandler:^(FBSession *session,
-                                 FBSessionState state,
-                                 NSError *error) {
-                 [self sessionStateChanged:session
-                                     state:state
-                                     error:error];
-             }];
-        } else {
-            // Use deprecated methods for backward compatibility
-            [FBSession
-             openActiveSessionWithPermissions:permissions
-             allowLoginUI:YES completionHandler:^(FBSession *session,
-                                                  FBSessionState state,
-                                                  NSError *error) {
-                 [self sessionStateChanged:session
-                                     state:state
-                                     error:error];
-             }];
-        }
-        
-        
-        
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception);
     }
     
     [super writeJavascript:nil];
