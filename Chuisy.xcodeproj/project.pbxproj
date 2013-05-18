@@ -614,6 +614,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Designection UG (haftungsbeschraenkt) & Co. KG";
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -642,6 +643,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chuisy;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A2F54748-8C4F-4349-9986-C33268DD1563";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
