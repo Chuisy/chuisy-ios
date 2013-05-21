@@ -50,6 +50,7 @@
 		5B92286B173D178200AEC381 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B922868173D178200AEC381 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B92286C173D178200AEC381 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B922869173D178200AEC381 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B92286D173D178200AEC381 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B92286A173D178200AEC381 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5BC8CAA7174788CC00136A11 /* Social.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC8CAA6174788CC00136A11 /* Social.m */; };
 		F840E1F1165FE0F500CFE078 /* config.xml in Resources */ = {isa = PBXBuildFile; fileRef = F840E1F0165FE0F500CFE078 /* config.xml */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +161,8 @@
 		5B922868173D178200AEC381 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		5B922869173D178200AEC381 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		5B92286A173D178200AEC381 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		5BC8CAA5174788CC00136A11 /* Social.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Social.h; sourceTree = "<group>"; };
+		5BC8CAA6174788CC00136A11 /* Social.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Social.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Chuisy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Chuisy-Info.plist"; path = "../Chuisy-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = Chuisy/config.xml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -320,6 +323,8 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				5BC8CAA5174788CC00136A11 /* Social.h */,
+				5BC8CAA6174788CC00136A11 /* Social.m */,
 				5B8F73BE173D80410047C1ED /* PushNotification.h */,
 				5B8F73BF173D80410047C1ED /* PushNotification.m */,
 				5B8F73B5173D75870047C1ED /* ImageResize.h */,
@@ -519,6 +524,7 @@
 				5B8F73BC173D75870047C1ED /* NSData+Base64.m in Sources */,
 				5B8F73BD173D75870047C1ED /* UIImage+Scale.m in Sources */,
 				5B8F73C0173D80410047C1ED /* PushNotification.m in Sources */,
+				5BC8CAA7174788CC00136A11 /* Social.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
