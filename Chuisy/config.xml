@@ -62,6 +62,7 @@
         <plugin name="com.webXells.imageResizer" value="ImageResize" />
         <plugin name="PushNotification" value="PushNotification" />
         <plugin name="Instagram" value="CDVInstagramPlugin" />
+        <plugin name="Social" value="Social" />
     </plugins>
 
     <access origin="*" />
