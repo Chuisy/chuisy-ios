@@ -101,8 +101,8 @@
                 alertMessage = @"Your current session is no longer valid. Please log in again.";
             }
         } else if (error.fberrorCategory == FBErrorCategoryUserCancelled) {
-            // The user has cancelled a login. You can inspect the error
-            // for more context. In the plugin, we will simply ignore it.
+            // The user has cancelled a login.
+            alertMessage = @"The user has cancelled the login";
         } else {
             // For simplicity, this sample treats other errors blindly.
             alertMessage = @"Error. Please try again later.";
