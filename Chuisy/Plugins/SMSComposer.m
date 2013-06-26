@@ -51,7 +51,7 @@
 	}
 
 	[self.viewController presentModalViewController:picker animated:YES];
-	[[UIApplication sharedApplication] setStatusBarHidden:YES];	// /This hides the statusbar when the picker is presented -@RandyMcMillan
+//	[[UIApplication sharedApplication] setStatusBarHidden:YES];	// /This hides the statusbar when the picker is presented -@RandyMcMillan
 	[picker release];
 }
 
