@@ -63,6 +63,7 @@
         <plugin name="PushNotification" value="PushNotification" />
         <plugin name="Instagram" value="CDVInstagramPlugin" />
         <plugin name="Social" value="Social" />
+        <plugin name="EmailComposer" value="EmailComposer" />
     </plugins>
 
     <access origin="*" />

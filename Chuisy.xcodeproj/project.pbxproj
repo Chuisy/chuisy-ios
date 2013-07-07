@@ -32,6 +32,7 @@
 		30A0434914DC770100060A13 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30A0434614DC770100060A13 /* Localizable.strings */; };
 		30E5649213A7FCAF007403D8 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E5649113A7FCAF007403D8 /* CoreMedia.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5B1594DD16A7569C00FEF299 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */; };
+		5B8B70B81789B111006E730F /* EmailComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8B70B71789B110006E730F /* EmailComposer.m */; };
 		5B8F7381173D2CC90047C1ED /* FacebookConnectPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B8F7380173D2CC90047C1ED /* FacebookConnectPlugin.m */; };
 		5B8F7383173D2CE70047C1ED /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B8F7382173D2CE70047C1ED /* FacebookSDK.framework */; };
 		5B8F7386173D2D0B0047C1ED /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5B8F7385173D2D0B0047C1ED /* FacebookSDKResources.bundle */; };
@@ -103,6 +104,8 @@
 		30E5649113A7FCAF007403D8 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* Chuisy-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Chuisy-Prefix.pch"; sourceTree = "<group>"; };
 		5B1594DC16A7569C00FEF299 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		5B8B70B61789B110006E730F /* EmailComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailComposer.h; sourceTree = "<group>"; };
+		5B8B70B71789B110006E730F /* EmailComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailComposer.m; sourceTree = "<group>"; };
 		5B8F737F173D2CC90047C1ED /* FacebookConnectPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookConnectPlugin.h; sourceTree = "<group>"; };
 		5B8F7380173D2CC90047C1ED /* FacebookConnectPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookConnectPlugin.m; sourceTree = "<group>"; };
 		5B8F7382173D2CE70047C1ED /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../../../Documents/FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				5BC8CAA917478E4A00136A11 /* CDVInstagramPlugin.m */,
 				5BC8CAA5174788CC00136A11 /* Social.h */,
 				5BC8CAA6174788CC00136A11 /* Social.m */,
+				5B8B70B61789B110006E730F /* EmailComposer.h */,
+				5B8B70B71789B110006E730F /* EmailComposer.m */,
 				5B8F73BE173D80410047C1ED /* PushNotification.h */,
 				5B8F73BF173D80410047C1ED /* PushNotification.m */,
 				5B8F73B5173D75870047C1ED /* ImageResize.h */,
@@ -531,6 +536,7 @@
 				5B8F73C0173D80410047C1ED /* PushNotification.m in Sources */,
 				5BC8CAA7174788CC00136A11 /* Social.m in Sources */,
 				5BC8CAAA17478E4A00136A11 /* CDVInstagramPlugin.m in Sources */,
+				5B8B70B81789B111006E730F /* EmailComposer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,7 +622,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chuisy;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9E7FC2DE-AF0C-40D4-9E5F-18ACEEFDBB56";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D221CF7-A1C9-43F5-A85C-1956FD202A29";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
