@@ -41,14 +41,19 @@
     NSString *urlString = [command.arguments objectAtIndex:1];
     NSURL *url = [NSURL URLWithString: urlString];
     NSString *imageUrl = [command.arguments objectAtIndex:2];
-    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    UIImage *image = nil;
+    if (imageUrl != (id)[NSNull null] && imageUrl.length != 0) {
+        image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    }
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
     {
         SLComposeViewController *fbSLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
         [fbSLComposerSheet setInitialText:[NSString stringWithFormat:text, fbSLComposerSheet.serviceType]];
-        [fbSLComposerSheet addImage: image];
+        if (image != nil) {
+            [fbSLComposerSheet addImage: image];
+        }
         [fbSLComposerSheet addURL: url];
         
         [fbSLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
@@ -80,14 +85,19 @@
     NSString *urlString = [command.arguments objectAtIndex:1];
     NSURL *url = [NSURL URLWithString: urlString];
     NSString *imageUrl = [command.arguments objectAtIndex:2];
-    UIImage *image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    UIImage *image = nil;
+    if (imageUrl != (id)[NSNull null] && imageUrl.length != 0) {
+        image = [[UIImage alloc] initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]]];
+    }
     
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
     {
         SLComposeViewController *twSLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
         
         [twSLComposerSheet setInitialText:[NSString stringWithFormat:text, twSLComposerSheet.serviceType]];
-        [twSLComposerSheet addImage: image];
+        if (image != nil) {
+            [twSLComposerSheet addImage: image];
+        }
         [twSLComposerSheet addURL: url];
         
         [twSLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
