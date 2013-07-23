@@ -622,7 +622,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chuisy;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "8D221CF7-A1C9-43F5-A85C-1956FD202A29";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2641CA2F-A120-4E5E-9064-042C5FBE51DE";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -661,7 +661,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Chuisy;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A2F54748-8C4F-4349-9986-C33268DD1563";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "DD8061BD-8716-40C6-9F14-56ABBFD8858B";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
